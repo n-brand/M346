@@ -1,0 +1,47 @@
+<svg viewBox="0 0 900 430" xmlns="http://www.w3.org/2000/svg" font-family="Arial, Helvetica, sans-serif">
+  <defs>
+    <marker id="arrUp" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#444"/>
+    </marker>
+  </defs>
+
+  <text x="450" y="32" text-anchor="middle" font-size="19" font-weight="bold" fill="#222">Vertikale Skalierung (Scale Up): dieselbe Instanz wird stärker</text>
+
+  <!-- Obergrenze -->
+  <line x1="530" y1="80" x2="880" y2="80" stroke="#c0392b" stroke-width="2.5" stroke-dasharray="10 6"/>
+  <text x="705" y="70" text-anchor="middle" font-size="12.5" fill="#c0392b">Obergrenze: irgendwann gibt es keine grössere Maschine mehr</text>
+
+  <!-- kleine Instanz -->
+  <rect x="80" y="220" width="170" height="130" rx="8" fill="#eef2f7" stroke="#4a6785" stroke-width="2"/>
+  <rect x="105" y="245" width="120" height="14" rx="3" fill="#c9d6e3" stroke="#4a6785" stroke-width="0.8"/>
+  <rect x="105" y="265" width="120" height="14" rx="3" fill="#c9d6e3" stroke="#4a6785" stroke-width="0.8"/>
+  <text x="165" y="305" text-anchor="middle" font-size="14" font-weight="bold" fill="#222">t3.micro</text>
+  <text x="165" y="325" text-anchor="middle" font-size="12.5" fill="#555">2 vCPU · 1 GB RAM · 8 GB Disk</text>
+  <text x="165" y="375" text-anchor="middle" font-size="12.5" fill="#555">Applikation wird langsam …</text>
+
+  <!-- Pfeil -->
+  <line x1="270" y1="285" x2="420" y2="285" stroke="#444" stroke-width="2.5" marker-end="url(#arrUp)"/>
+  <text x="345" y="262" text-anchor="middle" font-size="12" fill="#333">Instanztyp ändern:</text>
+  <text x="345" y="278" text-anchor="middle" font-size="11.5" fill="#777">Stop → ändern → Start</text>
+  <text x="345" y="308" text-anchor="middle" font-size="11.5" fill="#777">(Disk vergrössern geht</text>
+  <text x="345" y="322" text-anchor="middle" font-size="11.5" fill="#777">im laufenden Betrieb)</text>
+
+  <!-- grosse Instanz -->
+  <rect x="440" y="110" width="260" height="240" rx="8" fill="#eef2f7" stroke="#4a6785" stroke-width="2.5"/>
+  <rect x="470" y="140" width="200" height="18" rx="3" fill="#c9d6e3" stroke="#4a6785" stroke-width="0.8"/>
+  <rect x="470" y="166" width="200" height="18" rx="3" fill="#c9d6e3" stroke="#4a6785" stroke-width="0.8"/>
+  <rect x="470" y="192" width="200" height="18" rx="3" fill="#c9d6e3" stroke="#4a6785" stroke-width="0.8"/>
+  <rect x="470" y="218" width="200" height="18" rx="3" fill="#c9d6e3" stroke="#4a6785" stroke-width="0.8"/>
+  <text x="570" y="285" text-anchor="middle" font-size="15" font-weight="bold" fill="#222">t3.xlarge</text>
+  <text x="570" y="307" text-anchor="middle" font-size="13" fill="#555">4 vCPU · 16 GB RAM · 20 GB Disk</text>
+  <text x="570" y="332" text-anchor="middle" font-size="12.5" fill="#555">gleiche Applikation, nichts umgebaut</text>
+
+  <!-- Warnung SPOF -->
+  <path d="M 745 285 l 16 -28 l 16 28 z" fill="#fdeaea" stroke="#c0392b" stroke-width="2"/>
+  <text x="761" y="281" text-anchor="middle" font-size="15" font-weight="bold" fill="#c0392b">!</text>
+  <text x="800" y="308" text-anchor="middle" font-size="12" fill="#c0392b">immer noch <tspan font-weight="bold">1</tspan> Server:</text>
+  <text x="800" y="324" text-anchor="middle" font-size="12" fill="#c0392b">fällt er aus, ist alles weg</text>
+  <text x="800" y="340" text-anchor="middle" font-size="12" fill="#c0392b">(Single Point of Failure)</text>
+
+  <text x="450" y="412" text-anchor="middle" font-size="13" fill="#333">Einfach und schnell – aber begrenzt, mit Unterbruch, und der Preis wächst überproportional.</text>
+</svg>

@@ -1,0 +1,80 @@
+<svg viewBox="0 0 1000 430" xmlns="http://www.w3.org/2000/svg" font-family="Arial, Helvetica, sans-serif">
+  <text x="500" y="30" text-anchor="middle" font-size="19" font-weight="bold" fill="#222">Sicht 1: Die technischen Speichermodelle</text>
+
+  <!-- Panel 1: Block -->
+  <rect x="20" y="55" width="225" height="330" rx="10" fill="#eef2f7" stroke="#4a6785" stroke-width="1.5"/>
+  <text x="132" y="85" text-anchor="middle" font-size="16" font-weight="bold" fill="#33475b">Blockspeicher</text>
+  <text x="132" y="104" text-anchor="middle" font-size="13" fill="#33475b">AWS: EBS</text>
+  <!-- Instanz -->
+  <rect x="72" y="125" width="120" height="60" rx="5" fill="#ffffff" stroke="#4a6785" stroke-width="1.5"/>
+  <text x="132" y="160" text-anchor="middle" font-size="13" fill="#222">Instanz</text>
+  <!-- Verbindung -->
+  <line x1="132" y1="185" x2="132" y2="235" stroke="#4a6785" stroke-width="2.5"/>
+  <!-- Disk (Zylinder) -->
+  <ellipse cx="132" cy="245" rx="45" ry="12" fill="#c9d6e3" stroke="#4a6785"/>
+  <rect x="87" y="245" width="90" height="50" fill="#c9d6e3" stroke="none"/>
+  <line x1="87" y1="245" x2="87" y2="295" stroke="#4a6785"/>
+  <line x1="177" y1="245" x2="177" y2="295" stroke="#4a6785"/>
+  <ellipse cx="132" cy="295" rx="45" ry="12" fill="#c9d6e3" stroke="#4a6785"/>
+  <text x="132" y="275" text-anchor="middle" font-size="12" fill="#222">Volume</text>
+  <text x="132" y="340" text-anchor="middle" font-size="12" fill="#555">wie eine Festplatte,</text>
+  <text x="132" y="356" text-anchor="middle" font-size="12" fill="#555">gehört zu 1 Instanz</text>
+  <text x="132" y="374" text-anchor="middle" font-size="12" font-weight="bold" fill="#33475b">OS, Datenbanken</text>
+
+  <!-- Panel 2: Datei -->
+  <rect x="265" y="55" width="225" height="330" rx="10" fill="#eef7ee" stroke="#4c8a4c" stroke-width="1.5"/>
+  <text x="377" y="85" text-anchor="middle" font-size="16" font-weight="bold" fill="#2d5e2d">Dateispeicher</text>
+  <text x="377" y="104" text-anchor="middle" font-size="13" fill="#2d5e2d">AWS: EFS</text>
+  <!-- Zwei Instanzen -->
+  <rect x="285" y="125" width="90" height="50" rx="5" fill="#ffffff" stroke="#4c8a4c" stroke-width="1.5"/>
+  <text x="330" y="155" text-anchor="middle" font-size="12" fill="#222">Instanz A</text>
+  <rect x="380" y="125" width="90" height="50" rx="5" fill="#ffffff" stroke="#4c8a4c" stroke-width="1.5"/>
+  <text x="425" y="155" text-anchor="middle" font-size="12" fill="#222">Instanz B</text>
+  <line x1="330" y1="175" x2="365" y2="235" stroke="#4c8a4c" stroke-width="2.5"/>
+  <line x1="425" y1="175" x2="390" y2="235" stroke="#4c8a4c" stroke-width="2.5"/>
+  <!-- Ordner -->
+  <path d="M 322 245 h 32 l 10 12 h 68 v 60 h -110 z" fill="#d7ecd7" stroke="#4c8a4c" stroke-width="1.5"/>
+  <text x="377" y="292" text-anchor="middle" font-size="12" fill="#222">/geteilt</text>
+  <text x="377" y="340" text-anchor="middle" font-size="12" fill="#555">Netzlaufwerk (NFS),</text>
+  <text x="377" y="356" text-anchor="middle" font-size="12" fill="#555">mehrere Instanzen gleichzeitig</text>
+  <text x="377" y="374" text-anchor="middle" font-size="12" font-weight="bold" fill="#2d5e2d">geteilte Dateien</text>
+
+  <!-- Panel 3: Objekt -->
+  <rect x="510" y="55" width="225" height="330" rx="10" fill="#fdf3e7" stroke="#c07f2a" stroke-width="1.5"/>
+  <text x="622" y="85" text-anchor="middle" font-size="16" font-weight="bold" fill="#8a5a1d">Objektspeicher</text>
+  <text x="622" y="104" text-anchor="middle" font-size="13" fill="#8a5a1d">AWS: S3</text>
+  <!-- Clients -->
+  <rect x="530" y="125" width="90" height="50" rx="5" fill="#ffffff" stroke="#c07f2a" stroke-width="1.5"/>
+  <text x="575" y="150" text-anchor="middle" font-size="12" fill="#222">Instanz /</text>
+  <text x="575" y="165" text-anchor="middle" font-size="12" fill="#222">App</text>
+  <rect x="625" y="125" width="90" height="50" rx="5" fill="#ffffff" stroke="#c07f2a" stroke-width="1.5"/>
+  <text x="670" y="150" text-anchor="middle" font-size="12" fill="#222">Browser /</text>
+  <text x="670" y="165" text-anchor="middle" font-size="12" fill="#222">überall</text>
+  <line x1="575" y1="175" x2="610" y2="232" stroke="#c07f2a" stroke-width="2.5"/>
+  <line x1="670" y1="175" x2="635" y2="232" stroke="#c07f2a" stroke-width="2.5"/>
+  <text x="622" y="222" text-anchor="middle" font-size="11.5" font-weight="bold" fill="#8a5a1d">HTTP / API</text>
+  <!-- Bucket -->
+  <path d="M 577 240 h 90 l -12 65 h -66 z" fill="#f5dfc0" stroke="#c07f2a" stroke-width="1.5"/>
+  <text x="622" y="278" text-anchor="middle" font-size="12" fill="#222">Bucket</text>
+  <text x="622" y="340" text-anchor="middle" font-size="12" fill="#555">kein Mounten, kein Dateisystem,</text>
+  <text x="622" y="356" text-anchor="middle" font-size="12" fill="#555">praktisch unbegrenzt, günstig</text>
+  <text x="622" y="374" text-anchor="middle" font-size="12" font-weight="bold" fill="#8a5a1d">Backups, Medien, Statisches</text>
+
+  <!-- Panel 4: Flüchtig -->
+  <rect x="755" y="55" width="225" height="330" rx="10" fill="#fdeeee" stroke="#b34a4a" stroke-width="1.5" stroke-dasharray="7 4"/>
+  <text x="867" y="85" text-anchor="middle" font-size="16" font-weight="bold" fill="#8a2d2d">Flüchtiger Speicher</text>
+  <text x="867" y="104" text-anchor="middle" font-size="13" fill="#8a2d2d">AWS: Instance Store</text>
+  <!-- Instanz mit eingebauter Disk -->
+  <rect x="795" y="130" width="145" height="115" rx="5" fill="#ffffff" stroke="#b34a4a" stroke-width="1.5"/>
+  <text x="867" y="155" text-anchor="middle" font-size="13" fill="#222">Instanz</text>
+  <rect x="820" y="170" width="95" height="55" rx="4" fill="#f2cfcf" stroke="#b34a4a"/>
+  <text x="867" y="202" text-anchor="middle" font-size="11.5" fill="#222">Speicher «eingebaut»</text>
+  <!-- Kreuz -->
+  <line x1="800" y1="260" x2="935" y2="310" stroke="#b34a4a" stroke-width="4"/>
+  <line x1="935" y1="260" x2="800" y2="310" stroke="#b34a4a" stroke-width="4"/>
+  <text x="867" y="340" text-anchor="middle" font-size="12" fill="#555">sehr schnell, aber:</text>
+  <text x="867" y="356" text-anchor="middle" font-size="12" fill="#555">Instanz weg = Daten weg</text>
+  <text x="867" y="374" text-anchor="middle" font-size="12" font-weight="bold" fill="#8a2d2d">Cache, Zwischenresultate</text>
+
+  <text x="500" y="415" text-anchor="middle" font-size="13" fill="#333">Merkfrage pro Modell: <tspan font-weight="bold">Wie greife ich zu – und wie viele gleichzeitig?</tspan></text>
+</svg>

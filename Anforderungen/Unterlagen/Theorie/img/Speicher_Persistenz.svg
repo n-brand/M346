@@ -1,0 +1,65 @@
+<svg viewBox="0 0 1000 460" xmlns="http://www.w3.org/2000/svg" font-family="Arial, Helvetica, sans-serif">
+  <defs>
+    <marker id="arrP" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#444"/>
+    </marker>
+    <marker id="arrPG" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#2e7d32"/>
+    </marker>
+  </defs>
+
+  <text x="500" y="30" text-anchor="middle" font-size="19" font-weight="bold" fill="#222">Sicht 3: Persistenz – überleben die Daten das Ersetzen der Instanz?</text>
+
+  <!-- Instanz 1 (alt, wird ersetzt) -->
+  <g>
+    <rect x="70" y="75" width="220" height="150" rx="8" fill="#ffffff" stroke="#888" stroke-width="1.5"/>
+    <text x="180" y="102" text-anchor="middle" font-size="15" font-weight="bold" fill="#222">Instanz 1</text>
+    <rect x="100" y="120" width="160" height="80" rx="5" fill="#f3f3f3" stroke="#888"/>
+    <text x="180" y="150" text-anchor="middle" font-size="12.5" fill="#333">Root-Disk</text>
+    <text x="180" y="170" text-anchor="middle" font-size="11.5" fill="#777">delete_on_termination = true</text>
+    <!-- rotes Kreuz über der ganzen Instanz -->
+    <line x1="75" y1="80" x2="285" y2="220" stroke="#c0392b" stroke-width="5" opacity="0.8"/>
+    <line x1="285" y1="80" x2="75" y2="220" stroke="#c0392b" stroke-width="5" opacity="0.8"/>
+  </g>
+
+  <!-- Ersetzen-Pfeil -->
+  <line x1="300" y1="150" x2="440" y2="150" stroke="#444" stroke-width="2.5" marker-end="url(#arrP)"/>
+  <text x="370" y="132" text-anchor="middle" font-size="12.5" fill="#333">ersetzen</text>
+  <text x="370" y="172" text-anchor="middle" font-size="11.5" font-family="Consolas, monospace" fill="#555">tofu apply -replace</text>
+
+  <!-- Instanz 2 (neu) -->
+  <g>
+    <rect x="450" y="75" width="220" height="150" rx="8" fill="#ffffff" stroke="#2e7d32" stroke-width="2"/>
+    <text x="560" y="102" text-anchor="middle" font-size="15" font-weight="bold" fill="#222">Instanz 2 (neu)</text>
+    <rect x="480" y="120" width="160" height="80" rx="5" fill="#f3fbf3" stroke="#2e7d32"/>
+    <text x="560" y="150" text-anchor="middle" font-size="12.5" fill="#333">neue, leere Root-Disk</text>
+    <text x="560" y="170" text-anchor="middle" font-size="11.5" fill="#777">frisch aus cloud-init</text>
+  </g>
+
+  <!-- Verlust-Hinweis -->
+  <text x="180" y="255" text-anchor="middle" font-size="13" font-weight="bold" fill="#c0392b">Daten auf der Root-Disk: weg ✗</text>
+
+  <!-- Persistente Zone -->
+  <rect x="70" y="290" width="860" height="130" rx="10" fill="#eefaf2" stroke="#2e8b57" stroke-width="2"/>
+  <text x="500" y="318" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e5e3c">Persistenter Speicher – existiert unabhängig von jeder Instanz ✓</text>
+
+  <!-- EBS Volume -->
+  <ellipse cx="240" cy="350" rx="50" ry="12" fill="#d8efe0" stroke="#2e8b57"/>
+  <rect x="190" y="350" width="100" height="40" fill="#d8efe0" stroke="none"/>
+  <line x1="190" y1="350" x2="190" y2="390" stroke="#2e8b57"/>
+  <line x1="290" y1="350" x2="290" y2="390" stroke="#2e8b57"/>
+  <ellipse cx="240" cy="390" rx="50" ry="12" fill="#d8efe0" stroke="#2e8b57"/>
+  <text x="240" y="375" text-anchor="middle" font-size="12.5" fill="#222">EBS-Volume (/data)</text>
+
+  <!-- S3 Bucket -->
+  <path d="M 660 340 h 110 l -14 62 h -82 z" fill="#d8efe0" stroke="#2e8b57" stroke-width="1.5"/>
+  <text x="715" y="375" text-anchor="middle" font-size="12.5" fill="#222">S3-Bucket</text>
+
+  <!-- Wieder-Anhängen-Pfeile zur neuen Instanz -->
+  <line x1="290" y1="345" x2="480" y2="215" stroke="#2e7d32" stroke-width="2.5" stroke-dasharray="7 4" marker-end="url(#arrPG)"/>
+  <text x="345" y="270" font-size="12" fill="#2e7d32">wieder anhängen &amp; mounten</text>
+  <line x1="680" y1="335" x2="620" y2="230" stroke="#2e7d32" stroke-width="2.5" stroke-dasharray="7 4" marker-end="url(#arrPG)"/>
+  <text x="710" y="270" font-size="12" fill="#2e7d32">Zugriff per HTTP/API</text>
+
+  <text x="500" y="448" text-anchor="middle" font-size="13" fill="#333">Faustregel: <tspan font-weight="bold">Instanzen sind Wegwerfprodukte – Daten gehören auf Speicher, der die Instanz überlebt.</tspan></text>
+</svg>

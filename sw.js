@@ -1,6 +1,6 @@
 // Service Worker: alles vorab cachen, damit die App offline laeuft.
 // Bei Aenderungen an Dateien VERSION erhoehen. Neue Screenshots unten eintragen.
-var VERSION = 'm346-v2';
+var VERSION = 'm346-v3';
 
 var ASSETS = [
   './',
@@ -8,8 +8,21 @@ var ASSETS = [
   'css/styles.css',
   'js/app.js',
   'js/questions.js',
+  'js/questions/kn01.js',
+  'js/questions/kn02.js',
+  'js/questions/kn03.js',
+  'js/questions/kn04.js',
+  'js/questions/kn05.js',
+  'js/questions/kn06.js',
+  'js/questions/kn07.js',
+  'js/questions/kn08.js',
+  'js/questions/kn09.js',
   'manifest.webmanifest',
-  'img/icon.svg'
+  'img/icon.svg',
+  'Anforderungen/Unterlagen/Theorie/img/Hypervisor.png',
+  'Anforderungen/Unterlagen/Kompetenznachweise/KN08/snapshots.png',
+  'Anforderungen/Unterlagen/Theorie/img/Migrationsmodelle.png',
+  'Anforderungen/Unterlagen/Theorie/img/Betriebsmodell_Hybrid_Webshop.svg'
   // 'img/screenshots/beispiel.png',
 ];
 

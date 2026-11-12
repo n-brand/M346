@@ -1,0 +1,21 @@
+<?php
+// Diese Datei ist ein Jinja2-Template ({{ '{{ ... }}' }}-Platzhalter werden von Ansible ersetzt).
+// Nach dem Ausrollen liegt auf dem Webserver eine fertige db.php mit den echten Werten.
+$host = "{{ db_host }}";
+$user = "{{ db_user }}";
+$password = "{{ db_password }}";
+
+$conn = new mysqli($host, $user, $password);
+if ($conn->connect_error) {
+    die("Verbindung fehlgeschlagen: " . $conn->connect_error);
+}
+
+echo "<h1>Datenbank-Benutzer</h1>";
+$result = $conn->query("SELECT User, Host FROM mysql.user");
+echo "<ul>";
+while ($row = $result->fetch_assoc()) {
+    echo "<li>" . htmlspecialchars($row["User"]) . " @ " . htmlspecialchars($row["Host"]) . "</li>";
+}
+echo "</ul>";
+$conn->close();
+?>

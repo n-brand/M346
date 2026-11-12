@@ -1,0 +1,63 @@
+<svg viewBox="0 0 900 540" xmlns="http://www.w3.org/2000/svg" font-family="Arial, Helvetica, sans-serif">
+  <defs>
+    <marker id="arrOut" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#444"/>
+    </marker>
+    <marker id="arrOutG" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#2e7d32"/>
+    </marker>
+  </defs>
+
+  <text x="450" y="30" text-anchor="middle" font-size="19" font-weight="bold" fill="#222">Horizontale Skalierung (Scale Out): mehr gleiche Instanzen</text>
+
+  <!-- Benutzer -->
+  <g stroke="#444" stroke-width="2" fill="none">
+    <circle cx="390" cy="62" r="9"/><path d="M 377 84 q 13 -14 26 0"/>
+    <circle cx="450" cy="62" r="9"/><path d="M 437 84 q 13 -14 26 0"/>
+    <circle cx="510" cy="62" r="9"/><path d="M 497 84 q 13 -14 26 0"/>
+  </g>
+  <text x="580" y="72" font-size="13" fill="#555">viele Benutzer</text>
+  <line x1="450" y1="90" x2="450" y2="128" stroke="#444" stroke-width="2.5" marker-end="url(#arrOut)"/>
+
+  <!-- Load Balancer -->
+  <rect x="315" y="132" width="270" height="56" rx="8" fill="#fdf3e4" stroke="#d68910" stroke-width="2"/>
+  <text x="450" y="156" text-anchor="middle" font-size="15" font-weight="bold" fill="#8a5a1d">Load Balancer</text>
+  <text x="450" y="176" text-anchor="middle" font-size="12" fill="#8a5a1d">ein Eingang (DNS-Name) – verteilt die Anfragen</text>
+
+  <!-- Pfeile zu Instanzen -->
+  <line x1="370" y1="188" x2="200" y2="248" stroke="#444" stroke-width="2" marker-end="url(#arrOut)"/>
+  <line x1="450" y1="188" x2="450" y2="248" stroke="#444" stroke-width="2" marker-end="url(#arrOut)"/>
+  <line x1="530" y1="188" x2="700" y2="248" stroke="#444" stroke-width="2" marker-end="url(#arrOut)"/>
+
+  <!-- Instanzen -->
+  <g>
+    <rect x="115" y="255" width="170" height="95" rx="8" fill="#eefaf2" stroke="#2e8b57" stroke-width="2"/>
+    <text x="200" y="285" text-anchor="middle" font-size="14" font-weight="bold" fill="#222">Instanz 1</text>
+    <text x="200" y="305" text-anchor="middle" font-size="12" fill="#555">identisch (cloud-init)</text>
+    <circle cx="265" cy="275" r="10" fill="#2e8b57"/><path d="M 260 275 l 4 4 l 7 -8" stroke="#fff" stroke-width="2" fill="none"/>
+  </g>
+  <g>
+    <rect x="365" y="255" width="170" height="95" rx="8" fill="#eefaf2" stroke="#2e8b57" stroke-width="2"/>
+    <text x="450" y="285" text-anchor="middle" font-size="14" font-weight="bold" fill="#222">Instanz 2</text>
+    <text x="450" y="305" text-anchor="middle" font-size="12" fill="#555">identisch (cloud-init)</text>
+    <circle cx="515" cy="275" r="10" fill="#2e8b57"/><path d="M 510 275 l 4 4 l 7 -8" stroke="#fff" stroke-width="2" fill="none"/>
+  </g>
+  <g>
+    <rect x="615" y="255" width="170" height="95" rx="8" fill="#eefaf2" stroke="#2e8b57" stroke-width="2"/>
+    <text x="700" y="285" text-anchor="middle" font-size="14" font-weight="bold" fill="#222">Instanz 3</text>
+    <text x="700" y="305" text-anchor="middle" font-size="12" fill="#555">identisch (cloud-init)</text>
+    <circle cx="765" cy="275" r="10" fill="#2e8b57"/><path d="M 760 275 l 4 4 l 7 -8" stroke="#fff" stroke-width="2" fill="none"/>
+  </g>
+  <text x="450" y="332" text-anchor="middle" font-size="11.5" fill="#2e8b57">✓ = Health Check: der Load Balancer prüft laufend, wer gesund ist</text>
+
+  <!-- gemeinsamer Zustand -->
+  <line x1="200" y1="350" x2="330" y2="420" stroke="#2e7d32" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#arrOutG)"/>
+  <line x1="450" y1="350" x2="450" y2="415" stroke="#2e7d32" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#arrOutG)"/>
+  <line x1="700" y1="350" x2="570" y2="420" stroke="#2e7d32" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#arrOutG)"/>
+  <rect x="290" y="420" width="320" height="60" rx="8" fill="#eef2f7" stroke="#4a6785" stroke-width="2"/>
+  <text x="450" y="445" text-anchor="middle" font-size="13.5" font-weight="bold" fill="#33475b">gemeinsamer Zustand</text>
+  <text x="450" y="465" text-anchor="middle" font-size="12" fill="#33475b">Datenbank (z. B. Atlas), S3, Session-Store</text>
+
+  <text x="450" y="516" text-anchor="middle" font-size="13" fill="#333">Voraussetzung <tspan font-weight="bold">stateless</tspan>: Jede Anfrage kann von jeder Instanz beantwortet werden –</text>
+  <text x="450" y="533" text-anchor="middle" font-size="13" fill="#333">Zustand liegt nie auf der Instanz, sondern im gemeinsamen Speicher.</text>
+</svg>

@@ -1,0 +1,69 @@
+<svg viewBox="0 0 1000 440" xmlns="http://www.w3.org/2000/svg" font-family="Arial, Helvetica, sans-serif">
+  <defs>
+    <marker id="arrR" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#555"/>
+    </marker>
+  </defs>
+
+  <text x="500" y="30" text-anchor="middle" font-size="19" font-weight="bold" fill="#222">Sicht 2: Zugriffsklassen – wie oft brauche ich die Daten?</text>
+
+  <!-- Hot -->
+  <rect x="35" y="60" width="290" height="270" rx="10" fill="#fdeaea" stroke="#c0392b" stroke-width="2"/>
+  <text x="180" y="95" text-anchor="middle" font-size="18" font-weight="bold" fill="#c0392b">HOT</text>
+  <!-- Flamme -->
+  <path d="M 180 115 c 12 14 20 22 20 34 a 20 20 0 1 1 -40 0 c 0 -12 8 -20 20 -34 z" fill="#e74c3c" opacity="0.85"/>
+  <text x="180" y="195" text-anchor="middle" font-size="13" fill="#333">Zugriff: <tspan font-weight="bold">dauernd</tspan></text>
+  <text x="180" y="216" text-anchor="middle" font-size="13" fill="#333">Antwortzeit: Millisekunden</text>
+  <text x="180" y="237" text-anchor="middle" font-size="13" fill="#333">Preis pro GB: hoch</text>
+  <text x="180" y="258" text-anchor="middle" font-size="13" fill="#333">Preis pro Zugriff: keiner</text>
+  <text x="180" y="292" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#c0392b">Disk von OS und Datenbank (EBS)</text>
+  <text x="180" y="310" text-anchor="middle" font-size="12.5" fill="#c0392b">laufende Applikation</text>
+
+  <!-- Warm -->
+  <rect x="355" y="60" width="290" height="270" rx="10" fill="#fdf3e4" stroke="#d68910" stroke-width="2"/>
+  <text x="500" y="95" text-anchor="middle" font-size="18" font-weight="bold" fill="#b9770e">WARM</text>
+  <!-- Sonne -->
+  <circle cx="500" cy="137" r="16" fill="#f39c12" opacity="0.9"/>
+  <g stroke="#f39c12" stroke-width="2.5">
+    <line x1="500" y1="112" x2="500" y2="102"/>
+    <line x1="500" y1="162" x2="500" y2="172"/>
+    <line x1="475" y1="137" x2="465" y2="137"/>
+    <line x1="525" y1="137" x2="535" y2="137"/>
+    <line x1="483" y1="120" x2="476" y2="113"/>
+    <line x1="517" y1="154" x2="524" y2="161"/>
+    <line x1="483" y1="154" x2="476" y2="161"/>
+    <line x1="517" y1="120" x2="524" y2="113"/>
+  </g>
+  <text x="500" y="195" text-anchor="middle" font-size="13" fill="#333">Zugriff: <tspan font-weight="bold">regelmässig</tspan></text>
+  <text x="500" y="216" text-anchor="middle" font-size="13" fill="#333">Antwortzeit: schnell genug</text>
+  <text x="500" y="237" text-anchor="middle" font-size="13" fill="#333">Preis pro GB: mittel</text>
+  <text x="500" y="258" text-anchor="middle" font-size="13" fill="#333">Preis pro Zugriff: klein</text>
+  <text x="500" y="292" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#b9770e">S3 Standard: Webseiten-Dateien,</text>
+  <text x="500" y="310" text-anchor="middle" font-size="12.5" fill="#b9770e">Videos, aktuelle Backups</text>
+
+  <!-- Cold -->
+  <rect x="675" y="60" width="290" height="270" rx="10" fill="#e9f2fb" stroke="#2471a3" stroke-width="2"/>
+  <text x="820" y="95" text-anchor="middle" font-size="18" font-weight="bold" fill="#1a5276">COLD</text>
+  <!-- Schneeflocke -->
+  <g stroke="#2980b9" stroke-width="2.5">
+    <line x1="820" y1="112" x2="820" y2="162"/>
+    <line x1="798" y1="124" x2="842" y2="150"/>
+    <line x1="842" y1="124" x2="798" y2="150"/>
+    <line x1="820" y1="112" x2="813" y2="119"/>
+    <line x1="820" y1="112" x2="827" y2="119"/>
+    <line x1="820" y1="162" x2="813" y2="155"/>
+    <line x1="820" y1="162" x2="827" y2="155"/>
+  </g>
+  <text x="820" y="195" text-anchor="middle" font-size="13" fill="#333">Zugriff: <tspan font-weight="bold">fast nie</tspan></text>
+  <text x="820" y="216" text-anchor="middle" font-size="13" fill="#333">Antwortzeit: Minuten bis Stunden</text>
+  <text x="820" y="237" text-anchor="middle" font-size="13" fill="#333">Preis pro GB: sehr tief</text>
+  <text x="820" y="258" text-anchor="middle" font-size="13" fill="#333">Preis pro Zugriff: hoch (Abrufgebühr)</text>
+  <text x="820" y="292" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#1a5276">S3 Glacier: Archive,</text>
+  <text x="820" y="310" text-anchor="middle" font-size="12.5" fill="#1a5276">gesetzliche Aufbewahrung</text>
+
+  <!-- Pfeile unten -->
+  <line x1="80" y1="370" x2="920" y2="370" stroke="#555" stroke-width="2" marker-end="url(#arrR)"/>
+  <text x="500" y="362" text-anchor="middle" font-size="13" fill="#333">Preis pro gespeichertem GB sinkt</text>
+  <line x1="920" y1="405" x2="80" y2="405" stroke="#555" stroke-width="2" marker-end="url(#arrR)"/>
+  <text x="500" y="428" text-anchor="middle" font-size="13" fill="#333">Wartezeit und Kosten pro Zugriff sinken</text>
+</svg>

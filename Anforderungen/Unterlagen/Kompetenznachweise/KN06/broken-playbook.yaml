@@ -1,0 +1,20 @@
+# ACHTUNG: Dieses Playbook wurde von einer KI generiert. Es "funktioniert" -
+# aber es verletzt zentrale Ansible-Prinzipien. Teil D von KN06: analysieren
+# und verbessern, NICHT einfach übernehmen.
+
+- name: Webserver einrichten
+  hosts: web
+  become: true
+
+  tasks:
+    - name: Paketlisten aktualisieren
+      shell: apt-get update
+
+    - name: Apache und PHP installieren
+      shell: apt-get install -y apache2 php libapache2-mod-php
+
+    - name: Info-Seite erstellen
+      shell: echo "<?php phpinfo(); ?>" > /var/www/html/info.php
+
+    - name: Apache neu starten
+      shell: systemctl restart apache2
